@@ -50,7 +50,7 @@ public class SLL<T> {
 
     }
 
-    public Node find(T data) {
+    public Node findData(T data) {
         Node ref = head;
         while (ref != null) {
             if (ref.data.equals(data)) {
@@ -61,7 +61,7 @@ public class SLL<T> {
         return null;
     }
 
-    public Node findNth(int i) {
+    public Node findIndex(int i) {
         Node ref = head;
         int cnt = 0;
         while (ref != null) {
@@ -103,6 +103,11 @@ public class SLL<T> {
         }
 
         item.next = item.next.next;
+    }
+
+    public void cut() {
+//        lista 6-elementowa, znalezzc elemement i przeniesc go na koniec
+//               cut(c) ma byc: ABCDEF --> ABDEFC
     }
 }
 
