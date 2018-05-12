@@ -105,7 +105,8 @@ public class SLL<T> {
         item.next = item.next.next;
     }
 
-    public void cut() {
+    public void moveDataToEnd(T data) {
+        findData(data);
 //        lista 6-elementowa, znalezzc elemement i przeniesc go na koniec
 //               cut(c) ma byc: ABCDEF --> ABDEFC
     }

@@ -68,7 +68,7 @@ public class SLLTest {
     }
 
     @Test
-    public void findNthOfString() {
+    public void findIndex() {
         SLL<String> sll = new SLL<>();
         sll.append("tomek");
         sll.append("ada");
@@ -115,6 +115,14 @@ public class SLLTest {
         sll.append("test");
         sll.delete(sll.findIndex(1));
         Assert.assertNotEquals("test",sll.findIndex(1).getData());
+    }
+
+    @Test
+    public void replacer() {
+        SLL<String> sll = new SLL<>();
+        sll.append("tomek");
+        sll.append("ada");
+        sll.append("test");
     }
 
 } 
