@@ -74,6 +74,19 @@ public class SLL<T> {
         return null;
     }
 
+    public int getIndex(Node data) {
+        Node ref = head;
+        int cnt = 0;
+        while (ref != null) {
+            if (ref.data.equals(data)) {
+                return cnt;
+            }
+            cnt++;
+            ref = ref.next;
+        }
+        return cnt;
+    }
+
     public void insert(Node item, T newData) {
         Node<T> newNode = new Node<>(newData);
 
@@ -105,8 +118,35 @@ public class SLL<T> {
         item.next = item.next.next;
     }
 
+    public void print() {
+        Node ref = head;
+        StringBuilder sb = new StringBuilder();
+
+        while (ref != null) {
+            if (ref.next != null) {
+                sb.append(ref.getData()).append(", ");
+            } else {
+                sb.append(ref.getData());
+            }
+
+            ref = ref.next;
+        }
+
+        System.out.println(sb.toString());
+
+    }
+
     public void moveDataToEnd(T data) {
-        findData(data);
+        Node ref = head;
+        Node myData = (findData(data));
+        myData.next = null;
+
+//        while (ref.next != null) {
+//            ref = ref.next;
+//        }
+//        ref.next = myData;
+
+
 //        lista 6-elementowa, znalezzc elemement i przeniesc go na koniec
 //               cut(c) ma byc: ABCDEF --> ABDEFC
     }

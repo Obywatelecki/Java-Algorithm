@@ -103,7 +103,9 @@ public class SLLTest {
         sll.append("tomek");
         sll.append("ada");
         sll.append("test");
+        sll.print();
         sll.delete(sll.findIndex(0));
+        sll.print();
         Assert.assertNotEquals("ada",sll.findIndex(1).getData());
     }
 
@@ -113,7 +115,9 @@ public class SLLTest {
         sll.append("tomek");
         sll.append("ada");
         sll.append("test");
+        sll.print();
         sll.delete(sll.findIndex(1));
+        sll.print();
         Assert.assertNotEquals("test",sll.findIndex(1).getData());
     }
 
@@ -123,6 +127,55 @@ public class SLLTest {
         sll.append("tomek");
         sll.append("ada");
         sll.append("test");
+    }
+
+    @Test
+    public void moveToTheEndTest() {
+        SLL<String> sll = new SLL<>();
+        sll.append("A");
+        sll.append("B");
+        sll.append("C");
+        sll.append("D");
+        sll.append("E");
+        sll.append("F");
+
+        sll.print();
+
+        sll.moveDataToEnd("C");
+
+        //Assert.assertEquals("F", sll.findIndex(5).getData());
+
+        sll.print();
+
+
+    }
+
+    @Test
+    public void printTest() {
+        SLL<String> sll = new SLL<>();
+        sll.append("A");
+        sll.append("B");
+        sll.append("C");
+        sll.append("D");
+        sll.append("E");
+        sll.append("F");
+
+        sll.print();
+    }
+
+    @Test
+    public void getIndexTest() {
+        SLL<String> sll = new SLL<>();
+        sll.append("A");
+        sll.append("B");
+        sll.append("C");
+        sll.append("D");
+        sll.append("E");
+        sll.append("F");
+
+        sll.print();
+
+        //sll.getIndex()
     }
 
 } 
