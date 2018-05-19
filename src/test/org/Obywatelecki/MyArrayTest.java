@@ -42,7 +42,7 @@ public class MyArrayTest {
     }
 
     @Test
-    public void insertTest() {
+    public void insertTest() throws Exception {
         MyArray<Integer> myArray = new MyArray<>();
         myArray.append(2);
         myArray.append(3);
@@ -55,7 +55,7 @@ public class MyArrayTest {
     }
 
     @Test
-    public void deleteTest() {
+    public void deleteTest() throws Exception {
         MyArray<Integer> myArray = new MyArray<>();
         myArray.append(2);
         myArray.append(3);
@@ -66,8 +66,8 @@ public class MyArrayTest {
 
     }
 
-    @Test
-    public void uberTest() {
+    @Deprecated
+    public void uberTest() throws Exception {
         MyArray<Integer> myArray = new MyArray<>();
 
         for (int i = 0; i < 1000000; ++i) {

@@ -94,7 +94,7 @@ public class SLLTest {
         sll.append("ada");
         sll.append("test");
         sll.delete(null);
-        Assert.assertNotEquals("tomek",sll.findIndex(0).getData());
+        Assert.assertNotEquals("tomek", sll.findIndex(0).getData());
     }
 
     @Test
@@ -106,7 +106,7 @@ public class SLLTest {
         sll.print();
         sll.delete(sll.findIndex(0));
         sll.print();
-        Assert.assertNotEquals("ada",sll.findIndex(1).getData());
+        Assert.assertNotEquals("ada", sll.findIndex(1).getData());
     }
 
     @Test
@@ -118,7 +118,7 @@ public class SLLTest {
         sll.print();
         sll.delete(sll.findIndex(1));
         sll.print();
-        Assert.assertNotEquals("test",sll.findIndex(1).getData());
+        Assert.assertNotEquals("test", sll.findIndex(1).getData());
     }
 
     @Test
@@ -176,6 +176,18 @@ public class SLLTest {
         sll.print();
 
         //sll.getIndex()
+    }
+
+    @Test
+    public void uberTest() {
+        SLL<Integer> sll = new SLL<>();
+
+        for (Integer idx = 0; idx < 1000000; ++idx) {
+            sll.append(idx);
+            if (idx % 10000 == 0) {
+                System.out.println(idx);
+            }
+        }
     }
 
 } 

@@ -1,7 +1,4 @@
 package org.Obywatelecki;
-
-import java.util.Arrays;
-
 public class MyArray<T> {
 
     public int size;
