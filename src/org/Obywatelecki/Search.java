@@ -52,4 +52,30 @@ public class Search {
         }
         return -1;
     }
+
+    public int stupidFind(int x) {
+
+        Random random = new Random();
+        int cnt = 0;
+
+        while (true) {
+
+            System.out.println(cnt);
+
+            if (x > arr.get(arr.size()-1)) {
+                return -1;
+            }
+
+            if (x < arr.get(0)) {
+                return -1;
+            }
+
+            int idx = random.nextInt(arr.size()-1);
+            if (arr.get(idx).equals(x)) {
+                return idx;
+            }
+            ++cnt;
+        }
+
+    }
 }
