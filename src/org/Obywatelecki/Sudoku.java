@@ -11,24 +11,40 @@ public class Sudoku {
     }
 
     static int[] sq = {
-            0, 0, 1, 1,
-            0, 0, 1, 1,
-            2, 2, 3, 3,
-            2, 2, 3, 3,
+            0, 0, 0, 1, 1, 1, 2, 2, 2,
+            0, 0, 0, 1, 1, 1, 2, 2, 2,
+            0, 0, 0, 1, 1, 1, 2, 2, 2,
+            3, 3, 3, 4, 4, 4, 5, 5, 5,
+            3, 3, 3, 4, 4, 4, 5, 5, 5,
+            3, 3, 3, 4, 4, 4, 5, 5, 5,
+            6, 6, 6, 7, 7, 7, 8, 8, 8,
+            6, 6, 6, 7, 7, 7, 8, 8, 8,
+            6, 6, 6, 7, 7, 7, 8, 8, 8,
     };
 
     static int[] lines = {
-            0, 0, 0, 0,
-            1, 1, 1, 1,
-            2, 2, 2, 2,
-            3, 3, 3, 3,
+            0, 0, 0, 0, 0, 0, 0, 0, 0,
+            1, 1, 1, 1, 1, 1, 1, 1, 1,
+            2, 2, 2, 2, 2, 2, 2, 2, 2,
+            3, 3, 3, 3, 3, 3, 3, 3, 3,
+            4, 4, 4, 4, 4, 4, 4, 4, 4,
+            5, 5, 5, 5, 5, 5, 5, 5, 5,
+            6, 6, 6, 6, 6, 6, 6, 6, 6,
+            7, 7, 7, 7, 7, 7, 7, 7, 7,
+            8, 8, 8, 8, 8, 8, 8, 8, 8,
     };
 
     static int[] cols = {
-            0, 1, 2, 3,
-            0, 1, 2, 3,
-            0, 1, 2, 3,
-            0, 1, 2, 3,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+            0, 1, 2, 3, 4, 5, 6, 7, 8,
+
     };
 
     public boolean minCheck(int N, int val, int[] tab, Integer[] board) {
@@ -62,7 +78,7 @@ public class Sudoku {
 
     public boolean check(int N, int val, Integer[] board) {
         Integer mySq = sq[N];
-        for (int i = 0; i <= 15; ++i) {
+        for (int i = 0; i <= 80; ++i) {
             if (sq[i] != mySq) {
                 continue;
             }
@@ -75,7 +91,7 @@ public class Sudoku {
         }
 
         Integer myLine = lines[N];
-        for (int i = 0; i <= 15; ++i) {
+        for (int i = 0; i <= 80; ++i) {
             if (lines[i] != myLine) {
                 continue;
             }
@@ -88,7 +104,7 @@ public class Sudoku {
         }
 
         Integer myCol = cols[N];
-        for (int i = 0; i <= 15; ++i) {
+        for (int i = 0; i <= 80; ++i) {
             if (cols[i] != myCol) {
                 continue;
             }
@@ -109,18 +125,18 @@ public class Sudoku {
 
         int idx = 0;
 
-        for (idx = 0; idx < 16; ++idx) {
+        for (idx = 0; idx <= 80; ++idx) {
             if (board[idx] == null) {
                 break;
             }
         }
 
-        if (idx == 16) {
+        if (idx == 80) {
             System.out.println(printBoard(board));
             return false;
         }
 
-        for (int val = 1; val <= 4; ++val) {
+        for (int val = 1; val <= 9; ++val) {
             if (check(idx, val, board)) {
                 ++cnt;
                 board[idx] = val;
@@ -133,7 +149,7 @@ public class Sudoku {
     }
 
     public String printBoard(Integer[] board) {
-      return Arrays.toString(board);
+        return Arrays.toString(board);
     }
 
 
