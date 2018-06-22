@@ -143,7 +143,7 @@ int x = 1500;
 System.out.println(x.toString());
 ```
 
-W każdym print zachodzi niejawne użycie metody .toString(). Ale najpierw zachodzi wypakowanie (unboxing) i tam leci metoda .getValue(). Więc najpierw zsumuje wartości jeśli się da, a dopiero potem zrobi .toString().
+W każdym printData zachodzi niejawne użycie metody .toString(). Ale najpierw zachodzi wypakowanie (unboxing) i tam leci metoda .getValue(). Więc najpierw zsumuje wartości jeśli się da, a dopiero potem zrobi .toString().
 
 ```JAVA
 Integer x = 15;
