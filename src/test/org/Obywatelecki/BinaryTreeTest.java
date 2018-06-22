@@ -42,37 +42,56 @@ public class BinaryTreeTest {
      */
 
     @Test
-    public void contains() {
+    public void testContains() {
 
         BinaryTree bt = new BinaryTree();
-        bt.add(3);
-        bt.add(4);
+        bt.add(10);
+        bt.add(7);
+        bt.add(13);
+        bt.add(5);
         bt.add(2);
+        bt.add(14);
+        bt.add(11);
 
-        Assert.assertTrue(bt.contains(3));
-        Assert.assertTrue(bt.contains(4));
-        Assert.assertFalse(bt.contains(10));
+        Assert.assertTrue(bt.contains(10));
+        Assert.assertTrue(bt.contains(5));
+        Assert.assertTrue(bt.contains(2));
 
     }
 
     @Test
-    public void delete() {
+    public void testDelete() {
 
         BinaryTree bt = new BinaryTree();
-        bt.add(3);
-        bt.add(4);
-        bt.add(2);
-        bt.add(5);
+        bt.add(10);
         bt.add(7);
-        bt.add(9);
+        bt.add(13);
+        bt.add(5);
+        bt.add(2);
+        bt.add(14);
         bt.add(11);
 
-        bt.delete(3);
+        bt.delete(10);
         bt.delete(11);
-        bt.delete(4);
+        bt.delete(5);
 
-        Assert.assertFalse(bt.contains(3));
+        Assert.assertFalse(bt.contains(10));
         Assert.assertFalse(bt.contains(11));
-        Assert.assertFalse(bt.contains(4));
+        Assert.assertFalse(bt.contains(5));
+    }
+
+    @Test
+    public void printer() {
+
+        BinaryTree bt = new BinaryTree();
+        bt.add(10);
+        bt.add(7);
+        bt.add(13);
+        bt.add(5);
+        bt.add(2);
+        bt.add(14);
+        bt.add(11);
+
+        bt.print();
     }
 }

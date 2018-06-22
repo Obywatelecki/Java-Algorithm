@@ -16,17 +16,20 @@ public class BinaryTree {
 
     Node root;
 
-    private Node addHelper(Node node, int value) {
+    public Node getRoot() {
+        return root;
+    }
+
+    private Node addHelper(Node node, int data) {
         if (node == null) {
-            return new Node(value);
+            return new Node(data);
         }
 
-        if (value < node.data) {
-            node.left = addHelper(node.left, value);
-        } else if (value > node.data) {
-            node.right = addHelper(node.right, value);
+        if (data < node.data) {
+            node.left = addHelper(node.left, data);
+        } else if (data > node.data) {
+            node.right = addHelper(node.right, data);
         } else {
-            // value already exists
             return node;
         }
 
@@ -79,7 +82,7 @@ public class BinaryTree {
                 return current.right;
             } else {
                 int smallestValue = findSmmalest(current.right);
-                current.data= smallestValue;
+                current.data = smallestValue;
                 current.right = deleteHelper(current.right, smallestValue);
                 return current;
             }
@@ -97,5 +100,35 @@ public class BinaryTree {
         deleteHelper(root, data);
     }
 
+    private void printHelper(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node.data);
+        printHelper(node.left);
+        printHelper(node.right);
+    }
 
+    public void print() {
+        printHelper(root);
+    }
+
+    public String print2(Node node) { //doesn't work :(
+        StringBuilder sb = new StringBuilder();
+//        if (node == null) {
+//            return null;
+//        }
+
+        sb.append(node.data);
+
+        if (node.left != null) {
+            return print2(node.left);
+        }
+        if (node.right != null) {
+            return print2(node.right);
+        }
+
+        return sb.toString();
+
+    }
 }
